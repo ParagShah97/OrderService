@@ -1,6 +1,6 @@
 package com.parag.OrderService.model;
 
-public class OrderRequest {
+public class    OrderRequest {
     private long productId;
     private long totalAmount;
     private long quantity;

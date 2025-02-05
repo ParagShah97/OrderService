@@ -9,7 +9,6 @@ import java.time.Instant;
 @Table(name = "ORDER_DETAILS")
 @Data
 public class Order {
-
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,8 +27,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(long id, long productId, long quantity, Instant orderDate, String orderStatus, long amount) {
-        this.id = id;
+    public Order(long productId, long quantity, Instant orderDate, String orderStatus, long amount) {
         this.productId = productId;
         this.quantity = quantity;
         this.orderDate = orderDate;
