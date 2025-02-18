@@ -14,10 +14,11 @@ spring:
     url: jdbc:mysql://localhost:3306/orderdb
     username: root
     password: root
-
+# Config server: it's another service which give common config.
   config:
     import: configserver:http://localhost:9296
 
+# Zipkin configuration
 management:
   tracing:
     sampling:
