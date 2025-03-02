@@ -17,6 +17,23 @@ spring:
 # Config server: it's another service which give common config.
   config:
     import: configserver:http://localhost:9296
+#  For Security client
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-kxjt0wcpmhjbhqvx.us.auth0.com/
+      client:
+        registration:
+          internal-client:
+            provider: okta  # If using Auth0, update provider name accordingly
+            authorization-grant-type: client_credentials
+            scope: email
+            client-id:
+            client-secret: 
+
+
+
 
 # Zipkin configuration
 management:
@@ -39,6 +56,7 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 3
         sliding-window-size: 10
         sliding-window-type: COUNT_BASED
+
 
 
 
