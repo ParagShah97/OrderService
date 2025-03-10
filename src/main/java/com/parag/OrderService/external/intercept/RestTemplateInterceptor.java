@@ -43,7 +43,7 @@ public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
                 "Bearer " + // OAuth2 access tokens use the "Bearer" authentication scheme.
                         oAuth2AuthorizedClientManager.authorize(OAuth2AuthorizeRequest // Request authorization
                                         .withClientRegistrationId("internal-client") // Specifies the OAuth2 client ID
-                                        .principal("internal") // Identifies the requesting principal (system user)
+                                        .principal("email") // Identifies the requesting principal (system user)
                                         .build()) // Constructs the authorization request
                                 .getAccessToken() // Retrieves the access token
                                 .getTokenValue()); // Extracts the raw token value
