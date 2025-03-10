@@ -11,12 +11,12 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
   datasource:
-    url: jdbc:mysql://localhost:3306/orderdb
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/orderdb
     username: root
     password: root
 # Config server: it's another service which give common config.
   config:
-    import: configserver:http://localhost:9296
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:9296
 #  For Security client
   security:
     oauth2:
@@ -29,7 +29,7 @@ spring:
             provider: okta  # If using Auth0, update provider name accordingly
             authorization-grant-type: client_credentials
             scope: email
-            client-id:
+            client-id: 
             client-secret: 
 
 

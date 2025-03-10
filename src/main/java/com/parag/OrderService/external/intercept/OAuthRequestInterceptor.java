@@ -33,7 +33,7 @@ public class OAuthRequestInterceptor implements RequestInterceptor {
                         oAuth2AuthorizedClientManager // Uses OAuth2AuthorizedClientManager to get the access token
                                 .authorize(OAuth2AuthorizeRequest // Builds an authorization request
                                         .withClientRegistrationId("internal-client") // Uses the OAuth2 client named "internal-client"
-                                        .principal("internal") // Identifies the request principal (can be a system user or a service)
+                                        .principal("email") // Identifies the request principal (can be a system user or a service)
                                         .build()) // Constructs the OAuth2 authorization request
                                 .getAccessToken() // Retrieves the access token
                                 .getTokenValue()); // Extracts the raw token value
