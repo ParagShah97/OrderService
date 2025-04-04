@@ -1,5 +1,3 @@
-Here's your content converted into a clean and well-formatted `README.md` file for your GitHub repository:
-
 ```markdown
 # Order Service
 
